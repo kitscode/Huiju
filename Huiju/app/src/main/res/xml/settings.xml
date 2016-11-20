@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference
+        android:key="collections"
+        android:title="@string/collections"/>
+    <Preference
+        android:key="language"
+        android:title="@string/language" />
+    <CheckBoxPreference
+        android:key="night_mode"
+        android:title="@string/night_mode"
+        android:checked="false"/>
+    <CheckBoxPreference
+        android:key="no_pics"
+        android:title="@string/no_pics"
+        android:summary="@string/summary_no_pics"
+        android:checked="false"/>
+    <CheckBoxPreference
+        android:key="auto_refresh"
+        android:title="@string/auto_refresh"
+        android:summary="@string/summary_auto_refresh"
+        android:checked="false"/>
+    <Preference
+        android:key="clear"
+        android:title="@string/clear_cache"/>
+    <Preference
+        android:key="about"
+        android:title="@string/about_software"/>
+</PreferenceScreen>

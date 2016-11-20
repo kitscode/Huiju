@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string name="app_name">汇聚新闻</string>
+        <string name="navi_news">新闻</string>
+        <string name="navi_video">视频</string>
+        <string name="navi_history">历史</string>
+        <string name="navi_home">我的</string>
+
+        <string name="toolbar_settings">设置</string>
+
+        <string name="collections">文章收藏</string>
+        <string name="night_mode">夜间模式</string>
+        <string name="no_pics">无图模式</string>
+        <string name="about_software">关于软件</string>
+        <string name="auto_refresh">自动刷新</string>
+        <string name="language">语言选择</string>
+        <string name="clear_cache">清除缓存</string>
+
+        <string name="language_dialog">语言选择</string>
+        <string name="summary_no_pics">不加载图片</string>
+        <string name="summary_auto_refresh">自动从网络加载数据</string>
+
+        <string name="press_again">再按一次退出</string>
+        <string name="clear_success">缓存清除成功</string>
+        <string name="information">&#160;&#160;汇聚新闻是一款集果壳科技网,网易热点视频,历史上的今天网站的资讯与一体的Android应用,便于用户浏览不同的新闻资讯,结合Retrofit和MVC架构实现。有收藏、语言选择、夜间模式、自动刷新等功能。\n
+        &#160;所有数据均来自网络,仅供个人开发与技术交流使用。</string>
+        <string name="share_to">分享到 ...</string>
+</resources>
