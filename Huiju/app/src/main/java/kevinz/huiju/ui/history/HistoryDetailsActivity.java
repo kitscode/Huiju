@@ -31,6 +31,7 @@ import kevinz.huiju.ui.base.BaseDetailsActivity;
  * Created by Administrator on 2016/10/31.
  */
 
+
 public class HistoryDetailsActivity extends BaseDetailsActivity {
     protected SimpleDraweeView topImage;
     ScrollView scrollView;

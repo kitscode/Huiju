@@ -49,7 +49,7 @@ public class GuokeDetailsActivity extends BaseDetailsActivity {
 
     @Override
     protected String getShareInfo() {
-        return "分享自汇聚";
+        return "["+articleBean.getTitle()+"]:"+articleBean.getUrl()+"(分享自汇聚)";
     }
 
     @Override

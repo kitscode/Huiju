@@ -46,12 +46,12 @@ public class MainActivity extends AppCompatActivity {
         }
         setContentView(R.layout.main_layout);
 
-        if(Settings.isNightMode){
+     /*   if(Settings.isNightMode){
             this.setTheme(R.style.NightTheme);
             findViewById(R.id.tab_layout).setBackgroundResource(R.color.night_primary);
         }else{
             this.setTheme(R.style.DayTheme);
-        }
+        }*/
 
         initBottomMenu();
         fragment = new GuokeNaviFragment();

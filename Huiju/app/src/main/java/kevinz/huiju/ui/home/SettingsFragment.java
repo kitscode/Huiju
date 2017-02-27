@@ -9,11 +9,10 @@ import android.preference.PreferenceFragment;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 
+import kevinz.huiju.HuijuApplication;
 import kevinz.huiju.R;
-import kevinz.huiju.support.CONSTANT;
 import kevinz.huiju.support.Settings;
 import kevinz.huiju.support.Utils;
 
@@ -31,6 +30,7 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
     private CheckBoxPreference mNoPicMode;
     private Preference mClearCache ;
     private Preference mAboutSoftware;
+    private int i=0;
 
     private Settings mSettings = new Settings();
     @Override
@@ -67,10 +67,25 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
         toolbar.setTitle(R.string.toolbar_settings);
     }
 
+    public void nightModeOpen() {
+        Intent intent = new Intent(HuijuApplication.AppContext, NightMode.class);
+        HuijuApplication.AppContext.startService(intent);
+    }
+    public void nightModeClose() {
+        Intent intent = new Intent(HuijuApplication.AppContext, NightMode.class);
+        HuijuApplication.AppContext.stopService(intent);
+    }
+
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if(preference == mNightMode){
-            Settings.isNightMode = Boolean.valueOf(newValue.toString());
+            if(!mNightMode.isChecked()){
+                nightModeOpen();
+            }else{
+                nightModeClose();
+            }
+
+           /* Settings.isNightMode = Boolean.valueOf(newValue.toString());
             Settings.needRecreate = true;
             mSettings.putBoolean(Settings.NIGHT_MODE, Settings.isNightMode);
 
@@ -79,13 +94,12 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
             }else if(!Settings.isNightMode  && Utils.getSysScreenBrightness() == CONSTANT.NIGHT_BRIGHTNESS){
                 Utils.setSysScreenBrightness(CONSTANT.DAY_BRIGHTNESS);
             }
-            getActivity().recreate();
+            getActivity().recreate();*/
             return true;
         }else if(preference == mNoPicMode){
             Settings.noPicMode = Boolean.valueOf(newValue.toString());
             Settings.needRecreate = true;
             getActivity().recreate();
-            Log.d("重启","Activity");
             return true;
         }
         return false;

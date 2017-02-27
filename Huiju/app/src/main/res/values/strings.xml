@@ -22,7 +22,7 @@
 
     <string name="press_again">Press again to exit</string>
     <string name="clear_success">Cache Clear Successfully</string>
-    <string name="information">&#160;&#160;汇聚新闻是一款集果壳科技网,网易热点视频,历史上的今天网站的资讯与一体的Android应用,便于用户浏览不同的新闻资讯,结合Retrofit和MVC架构实现。有收藏、语言选择、夜间模式、自动刷新等功能。\n
+    <string name="information">&#160;&#160;汇聚新闻是一款集果壳科技网,网易热点视频,历史上的今天网站的资讯与一体的Android应用,便于用户浏览不同的新闻资讯。有收藏、语言选择、夜间模式、自动刷新等功能。\n
         &#160;所有数据均来自网络,仅供个人开发与技术交流使用。</string>
     <string name="share_to">Share to ...</string>
     <string-array name="languages">

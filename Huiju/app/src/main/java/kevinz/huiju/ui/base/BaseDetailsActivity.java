@@ -64,11 +64,10 @@ public abstract class BaseDetailsActivity extends AppCompatActivity{
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.share) {
-            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+            Intent sharingIntent = new Intent(Intent.ACTION_SEND);
             sharingIntent.setType("text/plain");
             sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, getShareInfo());
             startActivity(Intent.createChooser(sharingIntent,getString(R.string.share_to)));
-            return super.onOptionsItemSelected(item);
         }else if(item.getItemId() == R.id.collect){
             if(isCollected == 1){
                 removeFromCollection();
