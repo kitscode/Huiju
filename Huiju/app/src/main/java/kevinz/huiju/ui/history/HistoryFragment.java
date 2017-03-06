@@ -22,9 +22,6 @@ import kevinz.huiju.bean.history.HistoryDetails;
 import kevinz.huiju.data.HistoryData;
 import kevinz.huiju.support.CONSTANT;
 
-/**
- * Created by Administrator on 2016/10/26.
- */
 
 public class HistoryFragment extends Fragment {
 

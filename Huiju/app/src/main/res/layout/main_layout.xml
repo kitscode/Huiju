@@ -37,7 +37,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
         app:bnbMode="mode_fixed"
         app:bnbActiveColor="@android:color/holo_blue_dark"
         app:bnbInactiveColor="@android:color/black"/>

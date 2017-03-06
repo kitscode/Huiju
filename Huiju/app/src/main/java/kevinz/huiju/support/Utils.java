@@ -1,18 +1,13 @@
 package kevinz.huiju.support;
 
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Configuration;
-import android.net.Uri;
 import android.util.Log;
 
 import java.util.Locale;
 
 import kevinz.huiju.HuijuApplication;
 
-/**
- * Created by Administrator on 2016/11/5.
- */
 
 public class Utils {
     private static boolean DEBUG = true;
@@ -59,29 +54,5 @@ public class Utils {
         context.getApplicationContext().getResources().updateConfiguration(conf, context.getResources().getDisplayMetrics());
     }
 
-    public static final int MAX_BRIGHTNESS = 255;
-    public static int getSysScreenBrightness() {
-        int screenBrightness = MAX_BRIGHTNESS;
-        try {
-            screenBrightness = android.provider.Settings.System.getInt(mContext.getContentResolver(), android.provider.Settings.System.SCREEN_BRIGHTNESS);
-        } catch (Exception e) {
-            Utils.DLog("获得当前系统的亮度值失败：");
-        }
-        return screenBrightness;
-    }
-
-    /**
-     * 设置当前系统的亮度值:0~255
-     */
-    public static void setSysScreenBrightness(int brightness) {
-        try {
-            ContentResolver resolver = mContext.getContentResolver();
-            Uri uri = android.provider.Settings.System.getUriFor(android.provider.Settings.System.SCREEN_BRIGHTNESS);
-            android.provider.Settings.System.putInt(resolver, android.provider.Settings.System.SCREEN_BRIGHTNESS, brightness);
-            resolver.notifyChange(uri, null); // 实时通知改变
-        } catch (Exception e) {
-            Utils.DLog("设置当前系统的亮度值失败："+e);
-        }
-    }
 
 }

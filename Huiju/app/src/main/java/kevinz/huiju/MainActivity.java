@@ -3,15 +3,11 @@ package kevinz.huiju;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.widget.TextView;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 
-import kevinz.huiju.database.DataBaseHelper;
 import kevinz.huiju.support.Settings;
 import kevinz.huiju.support.Utils;
 import kevinz.huiju.ui.guoke.GuokeNaviFragment;
@@ -20,19 +16,11 @@ import kevinz.huiju.ui.home.SettingsFragment;
 import kevinz.huiju.ui.video.VideoFragment;
 
 
-/**
- * Created by Administrator on 2016/10/19.
- */
 
 public class MainActivity extends AppCompatActivity {
 
-    Toolbar toolbar;
-    Fragment fragment;
-
-    static String content;
-    TextView textView;
-    int lang;
-    TabLayout tabLayout;
+    private Fragment fragment;
+    private int lang;
     private boolean needQuit = false;
 
     private Settings mSettings = new Settings();
@@ -45,26 +33,16 @@ public class MainActivity extends AppCompatActivity {
             Utils.changeLanguage(this,lang);
         }
         setContentView(R.layout.main_layout);
-
-     /*   if(Settings.isNightMode){
-            this.setTheme(R.style.NightTheme);
-            findViewById(R.id.tab_layout).setBackgroundResource(R.color.night_primary);
-        }else{
-            this.setTheme(R.style.DayTheme);
-        }*/
-
         initBottomMenu();
         fragment = new GuokeNaviFragment();
         changeFragment();
-        DataBaseHelper helper = new DataBaseHelper(this,"huiju",null,1);
-        helper.getWritableDatabase();
     }
 
-    void changeFragment() {
+    private void changeFragment() {
         getFragmentManager().beginTransaction().replace(R.id.main_list, fragment).commit();
     }
 
-    void initBottomMenu() {
+    private void initBottomMenu() {
         BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation);
 
         bottomNavigationBar
@@ -128,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         sleep(3000);
                     } catch (InterruptedException e) {
-                        // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
 

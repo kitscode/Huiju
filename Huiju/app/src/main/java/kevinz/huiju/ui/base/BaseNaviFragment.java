@@ -30,9 +30,7 @@ import android.view.ViewGroup;
 
 import kevinz.huiju.R;
 
-/**
- * Created by mummyding on 15-11-13.
- */
+
 public abstract class BaseNaviFragment extends Fragment {
     protected View parentView;
     protected ViewPager viewPager;

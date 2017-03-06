@@ -5,9 +5,6 @@ import android.os.Handler;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Administrator on 2016/10/22.
- */
 
 public abstract class BaseData<T> {
     protected Handler mhandler;

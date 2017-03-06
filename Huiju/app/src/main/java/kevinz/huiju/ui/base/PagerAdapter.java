@@ -22,13 +22,7 @@ package kevinz.huiju.ui.base;
 import android.app.FragmentManager;
 import android.support.v13.app.FragmentPagerAdapter;
 
-/**
- * Created by mummyding on 15-11-13.<br>
- * Abstract Class. A common PagerAdapter for ViewPager.<br>
- * You must implement GetItem method if inherits it .
- * @author MummyDing
- * @version Leisure 1.0
- */
+
 public abstract class PagerAdapter extends FragmentPagerAdapter {
 
     private String [] titles;

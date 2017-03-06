@@ -4,14 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * Created by Administrator on 2016/11/17.
- */
 
 public class DataBaseHelper extends SQLiteOpenHelper{
-
-    final String CREATE_COLLECTION_TABLE = "create table collections " +
-            "(title text primary key,image text,description text,url text,ifcollected int)";
 
     public DataBaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -19,6 +13,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        String CREATE_COLLECTION_TABLE = "create table collections " +
+                "(title text primary key,image text,description text,url text,ifcollected int)";
         db.execSQL(CREATE_COLLECTION_TABLE);
     }
 

@@ -30,7 +30,6 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
     private CheckBoxPreference mNoPicMode;
     private Preference mClearCache ;
     private Preference mAboutSoftware;
-    private int i=0;
 
     private Settings mSettings = new Settings();
     @Override
@@ -84,17 +83,6 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
             }else{
                 nightModeClose();
             }
-
-           /* Settings.isNightMode = Boolean.valueOf(newValue.toString());
-            Settings.needRecreate = true;
-            mSettings.putBoolean(Settings.NIGHT_MODE, Settings.isNightMode);
-
-            if(Settings.isNightMode && Utils.getSysScreenBrightness() > CONSTANT.NIGHT_BRIGHTNESS){
-                Utils.setSysScreenBrightness(CONSTANT.NIGHT_BRIGHTNESS);
-            }else if(!Settings.isNightMode  && Utils.getSysScreenBrightness() == CONSTANT.NIGHT_BRIGHTNESS){
-                Utils.setSysScreenBrightness(CONSTANT.DAY_BRIGHTNESS);
-            }
-            getActivity().recreate();*/
             return true;
         }else if(preference == mNoPicMode){
             Settings.noPicMode = Boolean.valueOf(newValue.toString());

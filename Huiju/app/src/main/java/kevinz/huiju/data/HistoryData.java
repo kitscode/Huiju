@@ -14,9 +14,7 @@ import kevinz.huiju.support.CONSTANT;
 import kevinz.huiju.bean.history.HistoryBean;
 import kevinz.huiju.bean.history.HistoryDetails;
 
-/**
- * Created by Administrator on 2016/10/25.
- */
+
 
 public class HistoryData extends BaseData {
 
