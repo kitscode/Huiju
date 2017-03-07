@@ -10,9 +10,6 @@ import android.widget.VideoView;
 
 import kevinz.huiju.R;
 
-/**
- * Created by Administrator on 2016/11/13.
- */
 
 public class PalyActivity extends Activity {
     @Override

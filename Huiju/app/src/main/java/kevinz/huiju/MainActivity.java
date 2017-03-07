@@ -85,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
         if(Settings.needRecreate) {
             Settings.needRecreate = false;
             this.recreate();
@@ -94,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        // TODO Auto-generated method stub
         if(needQuit){
             super.onBackPressed();
         }else{
@@ -102,13 +100,11 @@ public class MainActivity extends AppCompatActivity {
             Snackbar.make(getCurrentFocus(),R.string.press_again,Snackbar.LENGTH_SHORT).show();
             new Thread(){
                 public void run() {
-
                     try {
                         sleep(3000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-
                     needQuit = false;
                 }
 

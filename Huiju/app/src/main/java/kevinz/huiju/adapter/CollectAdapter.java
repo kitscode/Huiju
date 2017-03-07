@@ -17,9 +17,6 @@ import kevinz.huiju.R;
 import kevinz.huiju.bean.Collections;
 import kevinz.huiju.ui.home.CollectDetailsActivity;
 
-/**
- * Created by Administrator on 2016/11/17.
- */
 
 public class CollectAdapter extends RecyclerView.Adapter<CollectAdapter.CollectHolder> {
 

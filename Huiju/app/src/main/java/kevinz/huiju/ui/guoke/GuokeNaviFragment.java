@@ -27,9 +27,7 @@ import kevinz.huiju.support.Utils;
 import kevinz.huiju.ui.base.BaseNaviFragment;
 import kevinz.huiju.ui.base.PagerAdapter;
 
-/**
- * Created by mummyding on 15-11-17.
- */
+
 public class GuokeNaviFragment extends BaseNaviFragment {
     private PagerAdapter pagerAdapter;
     int lang = Utils.getCurrentLanguage();

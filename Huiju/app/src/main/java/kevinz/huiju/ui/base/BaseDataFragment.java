@@ -18,9 +18,6 @@ import kevinz.huiju.HuijuApplication;
 import kevinz.huiju.R;
 import kevinz.huiju.support.CONSTANT;
 
-/**
- * Created by Administrator on 2016/11/15.
- */
 
 public abstract class BaseDataFragment extends Fragment {
 
@@ -66,7 +63,6 @@ public abstract class BaseDataFragment extends Fragment {
                     Toast.makeText(HuijuApplication.AppContext,"数据获取失败,请刷新重试",Toast.LENGTH_SHORT).show();
                     break;
             }
-
             return false;
         }
     });
