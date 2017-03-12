@@ -22,7 +22,7 @@ import java.io.IOException;
 import kevinz.huiju.R;
 import kevinz.huiju.bean.history.ArticleBean;
 import kevinz.huiju.bean.history.ArticleDetails;
-import kevinz.huiju.database.DataBaseHelper;
+import kevinz.huiju.db.DBHelper;
 import kevinz.huiju.support.CONSTANT;
 import kevinz.huiju.support.DisplayUtil;
 import kevinz.huiju.ui.base.BaseDetailsActivity;
@@ -74,7 +74,7 @@ public class HistoryDetailsActivity extends BaseDetailsActivity {
                 Gson gson = new Gson();
                 ArticleBean articleBean = gson.fromJson(res, ArticleBean.class);
                 articleDetailses = articleBean.getResult();
-                handler.sendEmptyMessage(CONSTANT.ID_SUCCESS);
+                handler.sendEmptyMessage(CONSTANT.LOAD_DATA_SUCCESS);
 
             }
         });
@@ -84,7 +84,7 @@ public class HistoryDetailsActivity extends BaseDetailsActivity {
         @Override
         public boolean handleMessage(Message msg) {
             switch (msg.what){
-                case CONSTANT.ID_SUCCESS:
+                case CONSTANT.LOAD_DATA_SUCCESS:
                     scrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
                         @Override
                         public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
@@ -113,13 +113,13 @@ public class HistoryDetailsActivity extends BaseDetailsActivity {
 
     @Override
     protected void addToCollection() {
-        DataBaseHelper helper = new DataBaseHelper(this,"huiju",null,1);
+        DBHelper helper = new DBHelper(this,"huiju",null,1);
         SQLiteDatabase db = helper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("title",articleDetailses[0].getTitle());
         values.put("image",articleDetailses[0].getPic());
         values.put("description",articleDetailses[0].getContent());
         values.put("ifcollected",1);
-        db.insert("collections",null,values);
+        db.insert("collection",null,values);
     }
 }

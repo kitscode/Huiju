@@ -33,7 +33,13 @@ public class VideoFragment extends BaseDataFragment{
     }
 
     @Override
-    protected void getData() {
+    protected boolean needCache() {
+        return false;
+    }
+
+    @Override
+    protected void loadFromInternet() {
+        res.clear();
         String baseUrl = "http://c.3g.163.com/nc/video/list/V9LG4B3A0/n/";
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -47,14 +53,14 @@ public class VideoFragment extends BaseDataFragment{
             @Override
             public void onResponse(Call<Videobean> call, Response<Videobean> response) {
                 if (!response.isSuccessful()) {
-                    handler.sendEmptyMessage(CONSTANT.ID_FAILURE);
+                    handler.sendEmptyMessage(CONSTANT.LOAD_DATA_FAILURE);
                     return;
                 }
                 Videobean.Details[] detailses = response.body().getV9LG4B3A0();
                 for( Videobean.Details data : detailses){
                     res.add(data);
                 }
-                handler.sendEmptyMessage(CONSTANT.ID_SUCCESS);
+                handler.sendEmptyMessage(CONSTANT.LOAD_DATA_SUCCESS);
             }
 
             @Override
@@ -74,6 +80,8 @@ public class VideoFragment extends BaseDataFragment{
         recyclerView.addItemDecoration(decoration);
         recyclerView.setAdapter(adapter);
     }
+
+
 
 
     public class SpacesItemDecoration extends RecyclerView.ItemDecoration {

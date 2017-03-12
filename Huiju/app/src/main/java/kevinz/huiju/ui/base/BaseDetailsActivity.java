@@ -94,5 +94,5 @@ public abstract class BaseDetailsActivity extends AppCompatActivity{
 
     protected abstract String getShareInfo();
     protected abstract void addToCollection();
-    protected void removeFromCollection(){};
+    protected void removeFromCollection(){}
 }

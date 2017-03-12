@@ -24,7 +24,7 @@
 </activity>
         <activity android:name=".ui.guoke.GuokeDetailsActivity"/>
         <activity android:name=".ui.history.HistoryDetailsActivity"/>
-        <activity android:name=".ui.home.CollectionsActivity"/>
+        <activity android:name=".ui.home.CollectionActivity"/>
         <activity android:name=".ui.video.PalyActivity"/>
         <activity android:name=".ui.home.CollectDetailsActivity"/>
         <service android:name=".ui.home.NightMode"/>

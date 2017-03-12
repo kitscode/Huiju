@@ -11,7 +11,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 
 import kevinz.huiju.R;
 import kevinz.huiju.bean.guoke.ArticleBean;
-import kevinz.huiju.database.DataBaseHelper;
+import kevinz.huiju.db.DBHelper;
 import kevinz.huiju.support.DisplayUtil;
 import kevinz.huiju.ui.base.BaseDetailsActivity;
 
@@ -54,7 +54,7 @@ public class GuokeDetailsActivity extends BaseDetailsActivity {
 
     @Override
     protected void addToCollection() {
-        DataBaseHelper helper = new DataBaseHelper(this,"huiju",null,1);
+        DBHelper helper = new DBHelper(this,"huiju",null,1);
         SQLiteDatabase db = helper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -63,7 +63,7 @@ public class GuokeDetailsActivity extends BaseDetailsActivity {
         values.put("description",articleBean.getSummary());
         values.put("url",articleBean.getUrl());
         values.put("ifcollected",1);
-        db.insert("collections",null,values);
+        db.insert("collection",null,values);
 
     }
 }

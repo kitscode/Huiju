@@ -19,7 +19,7 @@ public abstract class BaseNaviFragment extends Fragment {
     private TabLayout TabLayout;
     protected abstract  PagerAdapter initPagerAdapter();
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
     }
 

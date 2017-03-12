@@ -2,6 +2,7 @@ package kevinz.huiju.ui.home;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
@@ -13,6 +14,7 @@ import android.view.View;
 
 import kevinz.huiju.HuijuApplication;
 import kevinz.huiju.R;
+import kevinz.huiju.db.DBHelper;
 import kevinz.huiju.support.Settings;
 import kevinz.huiju.support.Utils;
 
@@ -24,10 +26,11 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
         Preference.OnPreferenceClickListener{
 
     Toolbar toolbar;
-    private Preference mCollections;
+    private Preference mCollection;
     private Preference mLanguage;
     private CheckBoxPreference mNightMode;
     private CheckBoxPreference mNoPicMode;
+    private CheckBoxPreference mAutoRefresh;
     private Preference mClearCache ;
     private Preference mAboutSoftware;
 
@@ -41,8 +44,8 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
         mLanguage.setSummary(this.getResources().getStringArray(R.array.languages)[Utils.getCurrentLanguage()]);
         mLanguage.setOnPreferenceClickListener(this);
 
-        mCollections = findPreference("collections");
-        mCollections.setOnPreferenceClickListener(this);
+        mCollection = findPreference("collection");
+        mCollection.setOnPreferenceClickListener(this);
 
         mNightMode = (CheckBoxPreference) findPreference("night_mode");
         mNightMode.setOnPreferenceChangeListener(this);
@@ -55,6 +58,7 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
 
         mAboutSoftware = findPreference("about");
         mAboutSoftware.setOnPreferenceClickListener(this);
+
     }
 
     @Override
@@ -97,9 +101,10 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
     public boolean onPreferenceClick(Preference preference) {
         if(preference == mLanguage){
             showLangDialog();
-        }else if(preference == mCollections){
-            startActivity(new Intent(getContext(), CollectionsActivity.class));
+        }else if(preference == mCollection){
+            startActivity(new Intent(getContext(), CollectionActivity.class));
         }else if(preference == mClearCache){
+            clearCache();
             Snackbar.make(getView(),R.string.clear_success,Snackbar.LENGTH_SHORT).show();
         }else if(preference == mAboutSoftware){
 
@@ -134,6 +139,11 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
                         }
                 ).show();
 
+    }
+
+    private void clearCache(){
+        SQLiteDatabase db=new DBHelper(getContext(),"huiju",null,1).getWritableDatabase();
+        db.execSQL("delete from guoke");
     }
 
     @Override

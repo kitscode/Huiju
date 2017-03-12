@@ -73,7 +73,7 @@ public class HistoryFragment extends Fragment {
         @Override
         public boolean handleMessage(Message msg) {
             switch (msg.what) {
-                case CONSTANT.ID_SUCCESS:
+                case CONSTANT.LOAD_DATA_SUCCESS:
                     break;
             }
             adapter.notifyDataSetChanged();

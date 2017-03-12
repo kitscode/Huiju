@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import kevinz.huiju.R;
-import kevinz.huiju.bean.Collections;
+import kevinz.huiju.bean.Collection;
 import kevinz.huiju.ui.home.CollectDetailsActivity;
 
 
@@ -36,7 +36,7 @@ public class CollectAdapter extends RecyclerView.Adapter<CollectAdapter.CollectH
     @Override
     public void onBindViewHolder(CollectHolder holder, int position) {
         mCursor.moveToNext();
-        final Collections collections = new Collections();
+        final Collection collections = new Collection();
         collections.setTitle(mCursor.getString(0));
         collections.setImage(mCursor.getString(1));
         collections.setDescription(mCursor.getString(2));

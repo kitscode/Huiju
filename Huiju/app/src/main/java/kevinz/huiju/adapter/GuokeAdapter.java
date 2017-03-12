@@ -20,9 +20,6 @@ import kevinz.huiju.bean.guoke.ArticleBean;
 import kevinz.huiju.support.Settings;
 import kevinz.huiju.ui.guoke.GuokeDetailsActivity;
 
-/**
- * Created by Administrator on 2016/10/21.
- */
 
 public class GuokeAdapter extends RecyclerView.Adapter<GuokeAdapter.GuokeViewHolder>{
 

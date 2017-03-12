@@ -11,10 +11,6 @@ public abstract class BaseData<T> {
     String murl;
     List<T> list = new ArrayList<>();
 
-    public BaseData(Handler handler) {
-        loadFromNet();
-        mhandler=handler;
-    }
     public BaseData(Handler handler,String url) {
         mhandler=handler;
         murl=url;
@@ -26,7 +22,4 @@ public abstract class BaseData<T> {
         return list;
     }
 
-    public boolean hasData() {
-        return !list.isEmpty();
-    }
 }

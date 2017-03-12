@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <Preference
-        android:key="collections"
-        android:title="@string/collections"/>
+        android:key="collection"
+        android:title="@string/collection"/>
     <Preference
         android:key="language"
         android:title="@string/language" />

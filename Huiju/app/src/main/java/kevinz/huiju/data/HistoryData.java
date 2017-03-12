@@ -48,7 +48,7 @@ public class HistoryData extends BaseData {
                 for (HistoryDetails details : historyDetails) {
                     list.add(details);
                 }
-                mhandler.sendEmptyMessage(CONSTANT.ID_SUCCESS);
+                mhandler.sendEmptyMessage(CONSTANT.LOAD_DATA_SUCCESS);
             }
         });
     }
