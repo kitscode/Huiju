@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 import com.yalantis.phoenix.PullToRefreshView;
 
@@ -46,7 +47,8 @@ public class CollectionActivity extends AppCompatActivity{
                 refreshView.setRefreshing(false);
             }
         });
-
+        TextView autoRefresh=(TextView)findViewById(R.id.pull_to_refresh);
+        autoRefresh.setVisibility(View.GONE);
         RecyclerView view = (RecyclerView) findViewById(R.id.recyclerView);
         cursor = getCollection();
         adapter = new CollectAdapter(cursor,this);

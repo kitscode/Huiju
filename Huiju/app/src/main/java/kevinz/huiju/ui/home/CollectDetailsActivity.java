@@ -31,7 +31,6 @@ public class CollectDetailsActivity extends BaseDetailsActivity {
         topImage = (SimpleDraweeView)findViewById(R.id.topImage);
         scrollView = (ScrollView)findViewById(R.id.scroll);
         initView();
-        Log.d("image url ::",collections.getImage());
         topImage.setImageURI(Uri.parse(collections.getImage()));
         isCollected = collections.getIfcollected();
     }

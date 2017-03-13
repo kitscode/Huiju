@@ -41,7 +41,7 @@ public abstract class BaseDataFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         thisView = inflater.inflate(getContentId(),container,false);
-//        pullToRefresh=(TextView)thisView.findViewById(R.id.pull_to_refresh);
+        pullToRefresh=(TextView)thisView.findViewById(R.id.pull_to_refresh);
         if (autoRefresh){
             loadFromInternet();
         }else {
@@ -87,7 +87,7 @@ public abstract class BaseDataFragment extends Fragment {
                     }
                     adapter.notifyDataSetChanged();
                     refreshView.setRefreshing(false);
-//                    pullToRefresh.setVisibility(View.GONE);
+                    pullToRefresh.setVisibility(View.GONE);
                     if(needCache()){
                         cache();
                     }
