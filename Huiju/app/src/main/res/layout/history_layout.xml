@@ -1,15 +1,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="16dp"
-    android:paddingBottom="16dp"
-    tools:context=".MainActivity">
+    android:padding="16dp">
     <View
-        android:id="@+id/view_help"
+        android:id="@+id/behind_line"
         android:layout_width="1dp"
-        android:layout_height="fill_parent"
+        android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
         android:background="#b3b3b3" />
     <ExpandableListView

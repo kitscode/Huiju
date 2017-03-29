@@ -1,6 +1,5 @@
 package kevinz.huiju.ui.history;
 
-import android.app.AlertDialog;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.os.Handler;
@@ -81,11 +80,11 @@ public class HistoryFragment extends Fragment {
             for (int i = 0; i < num; i++) {
                 expandableListView.expandGroup(i);
             }
-            new AlertDialog.Builder(getContext())
+          /*  new AlertDialog.Builder(getContext())
                     .setMessage("今天是"+str_month+"月"+str_day+"日\n"
                             +"历史上的今天共发生过\n"+num+"件\n值得纪念的事")
                     .create()
-                    .show();
+                    .show();*/
             return false;
         }
     });
