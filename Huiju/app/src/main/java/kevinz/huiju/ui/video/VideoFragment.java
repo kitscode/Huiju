@@ -10,9 +10,9 @@ import java.util.List;
 
 import kevinz.huiju.R;
 import kevinz.huiju.adapter.VideoAdapter;
-import kevinz.huiju.bean.Videobean;
-import kevinz.huiju.http.VideoRetrofit;
-import kevinz.huiju.support.CONSTANT;
+import kevinz.huiju.bean.video.Videobean;
+import kevinz.huiju.retrofit.VideoRetrofit;
+import kevinz.huiju.utils.CONSTANT;
 import kevinz.huiju.ui.base.BaseDataFragment;
 import retrofit2.Call;
 import retrofit2.Callback;

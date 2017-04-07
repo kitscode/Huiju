@@ -1,6 +1,6 @@
 
 
-package kevinz.huiju.support;
+package kevinz.huiju.utils;
 
 public class CONSTANT {
 

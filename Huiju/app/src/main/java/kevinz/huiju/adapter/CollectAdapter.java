@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import kevinz.huiju.R;
-import kevinz.huiju.bean.Collection;
+import kevinz.huiju.bean.collection.Collection;
 import kevinz.huiju.ui.home.CollectDetailsActivity;
 
 

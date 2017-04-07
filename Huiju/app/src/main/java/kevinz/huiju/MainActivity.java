@@ -8,8 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 
-import kevinz.huiju.support.Settings;
-import kevinz.huiju.support.Utils;
+import kevinz.huiju.utils.Settings;
+import kevinz.huiju.utils.Utils;
 import kevinz.huiju.ui.guoke.GuokeNaviFragment;
 import kevinz.huiju.ui.history.HistoryFragment;
 import kevinz.huiju.ui.home.SettingsFragment;

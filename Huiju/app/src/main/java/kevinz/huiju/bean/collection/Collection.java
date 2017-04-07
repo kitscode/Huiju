@@ -1,4 +1,4 @@
-package kevinz.huiju.bean;
+package kevinz.huiju.bean.collection;
 
 import java.io.Serializable;
 

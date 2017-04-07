@@ -1,23 +1,13 @@
-package kevinz.huiju.support;
+package kevinz.huiju.utils;
 
 import android.content.Context;
 import android.content.res.Configuration;
-import android.util.Log;
 
 import java.util.Locale;
-
-import kevinz.huiju.HuijuApplication;
 
 
 public class Utils {
     private static boolean DEBUG = true;
-    private static Context mContext = HuijuApplication.AppContext;
-
-    public static void DLog(String text){
-        if(DEBUG) {
-            Log.d("调试信息：", text);
-        }
-    }
 
     public static int getCurrentLanguage(){
         int lang = new Settings().getInt(Settings.LANGUAGE,-1);

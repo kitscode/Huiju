@@ -1,13 +1,10 @@
-package kevinz.huiju.support;
+package kevinz.huiju.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
 import kevinz.huiju.HuijuApplication;
 
-/**
- * Created by Administrator on 2016/11/5.
- */
 
 public class Settings {
     public static  boolean needRecreate = false;

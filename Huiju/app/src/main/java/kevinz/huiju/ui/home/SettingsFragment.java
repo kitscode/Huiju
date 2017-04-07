@@ -15,8 +15,8 @@ import android.view.View;
 import kevinz.huiju.HuijuApplication;
 import kevinz.huiju.R;
 import kevinz.huiju.db.DBHelper;
-import kevinz.huiju.support.Settings;
-import kevinz.huiju.support.Utils;
+import kevinz.huiju.utils.Settings;
+import kevinz.huiju.utils.Utils;
 
 /**
  * Created by Administrator on 2016/11/5.

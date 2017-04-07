@@ -1,4 +1,4 @@
-package kevinz.huiju.support;
+package kevinz.huiju.utils;
 
 import android.content.Context;
 import android.support.design.widget.Snackbar;

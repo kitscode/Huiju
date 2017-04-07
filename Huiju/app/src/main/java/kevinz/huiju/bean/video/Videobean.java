@@ -1,4 +1,4 @@
-package kevinz.huiju.bean;
+package kevinz.huiju.bean.video;
 
 /**
  * Created by Administrator on 2016/11/13.

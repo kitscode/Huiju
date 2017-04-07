@@ -1,14 +1,10 @@
-package kevinz.huiju.http;
+package kevinz.huiju.retrofit;
 
 
 import kevinz.huiju.bean.guoke.GuokeBean;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
-
-/**
- * Created by Administrator on 2016/11/12.
- */
 
 public interface GuokeRetrofit {
     @GET("article.json?retrieve_type=by_channel")

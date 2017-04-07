@@ -17,8 +17,8 @@ import com.yalantis.phoenix.PullToRefreshView;
 
 import kevinz.huiju.HuijuApplication;
 import kevinz.huiju.R;
-import kevinz.huiju.support.CONSTANT;
-import kevinz.huiju.support.Settings;
+import kevinz.huiju.utils.CONSTANT;
+import kevinz.huiju.utils.Settings;
 
 
 public abstract class BaseDataFragment extends Fragment {

@@ -23,13 +23,9 @@ import kevinz.huiju.R;
 import kevinz.huiju.bean.history.ArticleBean;
 import kevinz.huiju.bean.history.ArticleDetails;
 import kevinz.huiju.db.DBHelper;
-import kevinz.huiju.support.CONSTANT;
-import kevinz.huiju.support.DisplayUtil;
+import kevinz.huiju.utils.CONSTANT;
+import kevinz.huiju.utils.DisplayUtil;
 import kevinz.huiju.ui.base.BaseDetailsActivity;
-
-/**
- * Created by Administrator on 2016/10/31.
- */
 
 
 public class HistoryDetailsActivity extends BaseDetailsActivity {

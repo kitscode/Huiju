@@ -15,8 +15,8 @@ import kevinz.huiju.adapter.GuokeAdapter;
 import kevinz.huiju.bean.guoke.ArticleBean;
 import kevinz.huiju.bean.guoke.GuokeBean;
 import kevinz.huiju.db.DBHelper;
-import kevinz.huiju.http.GuokeRetrofit;
-import kevinz.huiju.support.CONSTANT;
+import kevinz.huiju.retrofit.GuokeRetrofit;
+import kevinz.huiju.utils.CONSTANT;
 import kevinz.huiju.ui.base.BaseDataFragment;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -112,7 +112,7 @@ public class GuokeFragment extends BaseDataFragment{
         }
     }
 
-    //    @Override
+//    @Override
 //    public void onActivityCreated(Bundle savedInstanceState) {
 //        super.onActivityCreated(savedInstanceState);
 //        floatingActionButton = (FloatingActionButton) getActivity().findViewById(R.id.floatButton);

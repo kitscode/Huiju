@@ -12,21 +12,19 @@ import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import kevinz.huiju.R;
-import kevinz.huiju.api.HistoryApi;
 import kevinz.huiju.bean.history.HistoryDetails;
-import kevinz.huiju.support.Settings;
+import kevinz.huiju.utils.Settings;
 import kevinz.huiju.ui.history.HistoryDetailsActivity;
 
 
-/**
- * Created by vienan on 2015/9/17.
- */
 public class HistoryAdapter extends BaseExpandableListAdapter {
+    private final String CONTENT_URL="http://api.juheapi.com/japi/tohdet?v=1.0&key=3cd552456d8000b294ddb55a2a3af09e&id=";
     private LayoutInflater inflater = null;
-    private List<HistoryDetails> groupList;
+    private List<HistoryDetails> groupList=new ArrayList<>();
     private Context context;
 
     /**
@@ -48,7 +46,6 @@ public class HistoryAdapter extends BaseExpandableListAdapter {
      */
     @Override
     public int getGroupCount() {
-        // TODO Auto-generated method stub
         return groupList.size();
     }
 
@@ -143,7 +140,7 @@ public class HistoryAdapter extends BaseExpandableListAdapter {
             public void onClick(View v) {
                 Intent intent = new Intent(context,HistoryDetailsActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("url", HistoryApi.history_content+details.get_id());
+                bundle.putString("url",CONTENT_URL+details.get_id());
                 intent.putExtras(bundle);
                 context.startActivity(intent);
             }

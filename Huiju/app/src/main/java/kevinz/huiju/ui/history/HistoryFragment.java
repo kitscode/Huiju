@@ -11,37 +11,38 @@ import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import kevinz.huiju.R;
 import kevinz.huiju.adapter.HistoryAdapter;
-import kevinz.huiju.api.HistoryApi;
+import kevinz.huiju.bean.history.HistoryBean;
 import kevinz.huiju.bean.history.HistoryDetails;
-import kevinz.huiju.data.HistoryData;
-import kevinz.huiju.support.CONSTANT;
+import kevinz.huiju.retrofit.HistoryRetrofit;
+import kevinz.huiju.utils.CONSTANT;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class HistoryFragment extends Fragment {
 
     private ExpandableListView expandableListView;
     private HistoryAdapter adapter;
-    private HistoryData historyData;
-    private List<HistoryDetails> list;
-    private String mUrl;
-    String str_month;
-    String str_day;
+    private List<HistoryDetails> list=new ArrayList<>();
+    String month;
+    String day;
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.history_layout, container, false);
 
-        getUrl();
-
-        historyData = new HistoryData(handler,mUrl);
-
+        getDate();
+        loadFromInternet();
         expandableListView = (ExpandableListView) view.findViewById(R.id.expandableListView);
-
         initView();
 
         return view;
@@ -49,24 +50,44 @@ public class HistoryFragment extends Fragment {
 
 
     private void initView() {
-        list = initData();
-        adapter = new HistoryAdapter(getContext(), list);
+        adapter = new HistoryAdapter(getContext(),list);
         expandableListView.setAdapter(adapter);
         expandableListView.setGroupIndicator(null); // 去掉默认带的箭头
     }
 
-    List<HistoryDetails> initData() {
-        list = historyData.getList();
-        return list;
-    }
-    protected void getUrl() {
-        SimpleDateFormat month = new SimpleDateFormat ("MM");
-        SimpleDateFormat day = new SimpleDateFormat ("d");
-        Date currentDate = new Date();
-        str_month = month.format(currentDate);
-        str_day = day.format(currentDate);
-        mUrl = HistoryApi.history_url+str_month+HistoryApi.day+str_day;
 
+    protected void loadFromInternet() {
+        String baseUrl = "http://api.juheapi.com/japi/";
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(baseUrl)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        HistoryRetrofit historyRetrofit = retrofit.create(HistoryRetrofit.class);
+        Call<HistoryBean> call = historyRetrofit.getHistoryInfo(month,day);
+        call.enqueue(new Callback<HistoryBean>() {
+            @Override
+            public void onResponse(Call<HistoryBean> call, Response<HistoryBean> response) {
+                HistoryDetails[] details=response.body().getResult();
+                for (HistoryDetails data:details){
+                    list.add(data);
+                }
+                handler.sendEmptyMessage(CONSTANT.LOAD_DATA_SUCCESS);
+            }
+
+            @Override
+            public void onFailure(Call<HistoryBean> call, Throwable t) {
+                handler.sendEmptyMessage(CONSTANT.LOAD_DATA_FAILURE);
+            }
+        });
+    }
+    protected void getDate() {
+        SimpleDateFormat monthF = new SimpleDateFormat ("M");
+        SimpleDateFormat dayF = new SimpleDateFormat ("d");
+        Date currentDate = new Date();
+        month = monthF.format(currentDate);
+        day = dayF.format(currentDate);
     }
     protected Handler handler = new Handler(new Handler.Callback() {
         @Override

@@ -3,16 +3,15 @@ package kevinz.huiju.ui.home;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ScrollView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import kevinz.huiju.R;
-import kevinz.huiju.bean.Collection;
+import kevinz.huiju.bean.collection.Collection;
 import kevinz.huiju.db.DBHelper;
-import kevinz.huiju.support.DisplayUtil;
+import kevinz.huiju.utils.DisplayUtil;
 import kevinz.huiju.ui.base.BaseDetailsActivity;
 
 /**

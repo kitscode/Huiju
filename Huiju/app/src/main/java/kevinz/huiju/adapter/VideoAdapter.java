@@ -15,13 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kevinz.huiju.R;
-import kevinz.huiju.bean.Videobean;
-import kevinz.huiju.support.Settings;
+import kevinz.huiju.bean.video.Videobean;
+import kevinz.huiju.utils.Settings;
 import kevinz.huiju.ui.video.PalyActivity;
-
-/**
- * Created by Administrator on 2016/11/3.
- */
 
 public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoHolder> {
 

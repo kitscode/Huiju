@@ -17,7 +17,7 @@ import java.util.List;
 
 import kevinz.huiju.R;
 import kevinz.huiju.bean.guoke.ArticleBean;
-import kevinz.huiju.support.Settings;
+import kevinz.huiju.utils.Settings;
 import kevinz.huiju.ui.guoke.GuokeDetailsActivity;
 
 

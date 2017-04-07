@@ -12,12 +12,9 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import kevinz.huiju.R;
 import kevinz.huiju.bean.guoke.ArticleBean;
 import kevinz.huiju.db.DBHelper;
-import kevinz.huiju.support.DisplayUtil;
+import kevinz.huiju.utils.DisplayUtil;
 import kevinz.huiju.ui.base.BaseDetailsActivity;
 
-/**
- * Created by Administrator on 2016/10/28.
- */
 
 public class GuokeDetailsActivity extends BaseDetailsActivity {
     private ArticleBean articleBean;
