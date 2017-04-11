@@ -5,11 +5,11 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +26,7 @@ public abstract class BaseDataFragment extends Fragment {
     protected RecyclerView.Adapter adapter;
     protected RecyclerView recyclerView;
     PullToRefreshView refreshView;
-    protected FloatingActionButton floatingActionButton;
+    protected Button search;
     protected abstract int getContentId();
     protected abstract void loadFromInternet();
     protected abstract void bindAdapter();

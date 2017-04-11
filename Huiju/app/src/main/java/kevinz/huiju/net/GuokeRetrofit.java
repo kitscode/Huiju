@@ -1,4 +1,4 @@
-package kevinz.huiju.retrofit;
+package kevinz.huiju.net;
 
 
 import kevinz.huiju.bean.guoke.GuokeBean;

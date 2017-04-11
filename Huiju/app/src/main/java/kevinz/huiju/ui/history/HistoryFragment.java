@@ -19,7 +19,7 @@ import kevinz.huiju.R;
 import kevinz.huiju.adapter.HistoryAdapter;
 import kevinz.huiju.bean.history.HistoryBean;
 import kevinz.huiju.bean.history.HistoryDetails;
-import kevinz.huiju.retrofit.HistoryRetrofit;
+import kevinz.huiju.net.HistoryRetrofit;
 import kevinz.huiju.utils.CONSTANT;
 import retrofit2.Call;
 import retrofit2.Callback;

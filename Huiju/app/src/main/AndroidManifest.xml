@@ -28,6 +28,7 @@
         <activity android:name=".ui.video.PalyActivity"/>
         <activity android:name=".ui.home.CollectDetailsActivity"/>
         <service android:name=".ui.home.NightMode"/>
+        <activity android:name=".utils.rearrange_tabs.DraggableGridViewSampleActivity"/>
     </application>
 
 </manifest>

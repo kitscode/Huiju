@@ -11,7 +11,7 @@ import java.util.List;
 import kevinz.huiju.R;
 import kevinz.huiju.adapter.VideoAdapter;
 import kevinz.huiju.bean.video.Videobean;
-import kevinz.huiju.retrofit.VideoRetrofit;
+import kevinz.huiju.net.VideoRetrofit;
 import kevinz.huiju.utils.CONSTANT;
 import kevinz.huiju.ui.base.BaseDataFragment;
 import retrofit2.Call;

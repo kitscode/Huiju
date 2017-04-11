@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/background_light"
+        android:text="拖动定制你自己的标题排序"
+        android:gravity="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp"/>
+     <kevinz.huiju.utils.rearrange_tabs.DraggableGridView
+        android:id="@+id/gridview"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+     >
+    </kevinz.huiju.utils.rearrange_tabs.DraggableGridView>
+
+    
+      <kevinz.huiju.utils.rearrange_tabs.DraggableGridView
+        android:id="@+id/gridview1"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+      >
+    </kevinz.huiju.utils.rearrange_tabs.DraggableGridView>
+     
+
+</LinearLayout>

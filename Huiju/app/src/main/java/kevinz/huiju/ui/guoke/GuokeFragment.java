@@ -3,9 +3,13 @@ package kevinz.huiju.ui.guoke;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,9 +19,9 @@ import kevinz.huiju.adapter.GuokeAdapter;
 import kevinz.huiju.bean.guoke.ArticleBean;
 import kevinz.huiju.bean.guoke.GuokeBean;
 import kevinz.huiju.db.DBHelper;
-import kevinz.huiju.retrofit.GuokeRetrofit;
-import kevinz.huiju.utils.CONSTANT;
+import kevinz.huiju.net.GuokeRetrofit;
 import kevinz.huiju.ui.base.BaseDataFragment;
+import kevinz.huiju.utils.CONSTANT;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -112,16 +116,22 @@ public class GuokeFragment extends BaseDataFragment{
         }
     }
 
-//    @Override
-//    public void onActivityCreated(Bundle savedInstanceState) {
-//        super.onActivityCreated(savedInstanceState);
-//        floatingActionButton = (FloatingActionButton) getActivity().findViewById(R.id.floatButton);
-//        floatingActionButton.setVisibility(View.VISIBLE);
-//    }
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        search = (Button) getActivity().findViewById(R.id.search);
+        search.setVisibility(View.VISIBLE);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),"start to search !!",Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
-//    @Override
-//    public void onDetach() {
-//        super.onDetach();
-//        floatingActionButton.setVisibility(View.GONE);
-//    }
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        search.setVisibility(View.GONE);
+    }
 }

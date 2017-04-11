@@ -4,33 +4,44 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/search"
-        app:backgroundTint="#0000"
+    <Button
+        android:id="@+id/search"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/search"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="40dp"
-        android:visibility="gone"/>
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="10dp"
+        android:visibility="visible"/>
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/accent"
         android:visibility="gone"/>
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tab_layout"
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@+id/toolbar"
-        app:tabMode="scrollable"
-        android:visibility="gone"/>
+        android:layout_height="wrap_content"
+        android:id="@+id/top_frame">
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:tabMode="scrollable"
+            android:visibility="gone"/>
+        <Button
+            android:id="@+id/rearrange_tabs"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="right"
+            android:background="@drawable/rearrange"/>
+    </FrameLayout>
     <FrameLayout
         android:id="@+id/main_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tab_layout"
+        android:layout_below="@+id/top_frame"
         android:layout_above="@+id/bottom_navigation"/>
     <com.ashokvarma.bottomnavigation.BottomNavigationBar
         android:id="@+id/bottom_navigation"

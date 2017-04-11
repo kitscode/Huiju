@@ -1,20 +1,23 @@
 package kevinz.huiju;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.FrameLayout;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 
-import kevinz.huiju.utils.Settings;
-import kevinz.huiju.utils.Utils;
-import kevinz.huiju.ui.guoke.GuokeNaviFragment;
+import kevinz.huiju.ui.guoke.NaviFragment;
 import kevinz.huiju.ui.history.HistoryFragment;
 import kevinz.huiju.ui.home.SettingsFragment;
 import kevinz.huiju.ui.video.VideoFragment;
-
+import kevinz.huiju.utils.Settings;
+import kevinz.huiju.utils.Utils;
+import kevinz.huiju.utils.rearrange_tabs.DraggableGridViewSampleActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private Fragment fragment;
     private int lang;
     private boolean needQuit = false;
+    private FrameLayout fl;
 
     private Settings mSettings = new Settings();
     @Override
@@ -34,8 +38,21 @@ public class MainActivity extends AppCompatActivity {
         }
         setContentView(R.layout.main_layout);
         initBottomMenu();
-        fragment = new GuokeNaviFragment();
+        fragment = new NaviFragment();
         changeFragment();
+        setRearrangeBtn();
+    }
+
+    //解决home页面的标题距离问题
+
+
+    private void setRearrangeBtn() {
+        findViewById(R.id.rearrange_tabs).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,DraggableGridViewSampleActivity.class));
+            }
+        });
     }
 
     private void changeFragment() {
@@ -56,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             public void onTabSelected(int position) {
                 switch (position){
                     case 0:
-                        fragment = new GuokeNaviFragment();
+                        fragment = new NaviFragment();
                         changeFragment();
                         break;
                     case 1:
@@ -111,6 +128,12 @@ public class MainActivity extends AppCompatActivity {
             }.start();
         }
 
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        recreate();
     }
 }
 

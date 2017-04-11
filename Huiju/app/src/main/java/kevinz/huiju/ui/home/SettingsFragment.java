@@ -1,5 +1,6 @@
 package kevinz.huiju.ui.home;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -11,6 +12,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 
 import kevinz.huiju.HuijuApplication;
 import kevinz.huiju.R;
@@ -33,6 +35,7 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
     private CheckBoxPreference mAutoRefresh;
     private Preference mClearCache ;
     private Preference mAboutSoftware;
+    private Button rearrange;
 
     private Settings mSettings = new Settings();
     @Override
@@ -68,6 +71,13 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
         toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
         toolbar.setVisibility(View.VISIBLE);
         toolbar.setTitle(R.string.toolbar_settings);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        rearrange=(Button)getActivity().findViewById(R.id.rearrange_tabs);
+        rearrange.setVisibility(View.INVISIBLE);
     }
 
     public void nightModeOpen() {
@@ -150,5 +160,6 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
     public void onDetach() {
         super.onDetach();
         toolbar.setVisibility(View.GONE);
+        rearrange.setVisibility(View.GONE);
     }
 }
