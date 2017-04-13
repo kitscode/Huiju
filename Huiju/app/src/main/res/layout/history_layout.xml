@@ -1,13 +1,22 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:paddingTop="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
     <View
         android:id="@+id/behind_line"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
         android:background="#b3b3b3" />
+    <TextView
+        android:id="@+id/date_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="@color/white"/>
     <ExpandableListView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -17,6 +26,7 @@
         android:divider="@null"
         android:dividerHeight="3dp"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/date_title"/>
 
 </RelativeLayout>

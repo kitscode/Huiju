@@ -19,7 +19,6 @@
         android:layout_height="40dp"
         android:background="@color/accent"
         android:visibility="gone"/>
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

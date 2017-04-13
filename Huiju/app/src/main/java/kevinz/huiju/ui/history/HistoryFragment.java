@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
+import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -33,8 +34,10 @@ public class HistoryFragment extends Fragment {
     private ExpandableListView expandableListView;
     private HistoryAdapter adapter;
     private List<HistoryDetails> list=new ArrayList<>();
-    String month;
-    String day;
+    private TextView date_title;
+    private String month;
+    private String day;
+    private int num;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
@@ -44,7 +47,6 @@ public class HistoryFragment extends Fragment {
         loadFromInternet();
         expandableListView = (ExpandableListView) view.findViewById(R.id.expandableListView);
         initView();
-
         return view;
     }
 
@@ -53,6 +55,7 @@ public class HistoryFragment extends Fragment {
         adapter = new HistoryAdapter(getContext(),list);
         expandableListView.setAdapter(adapter);
         expandableListView.setGroupIndicator(null); // 去掉默认带的箭头
+
     }
 
 
@@ -97,10 +100,11 @@ public class HistoryFragment extends Fragment {
                     break;
             }
             adapter.notifyDataSetChanged();
-            int num = expandableListView.getCount();
+            num = expandableListView.getCount();
             for (int i = 0; i < num; i++) {
                 expandableListView.expandGroup(i);
             }
+            date_title.setText("历史上"+month+"月"+day+"日有"+num+"件重要的事");
           /*  new AlertDialog.Builder(getContext())
                     .setMessage("今天是"+str_month+"月"+str_day+"日\n"
                             +"历史上的今天共发生过\n"+num+"件\n值得纪念的事")
@@ -110,4 +114,16 @@ public class HistoryFragment extends Fragment {
         }
     });
 
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        date_title=(TextView)getActivity().findViewById(R.id.date_title);
+        date_title.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        date_title.setVisibility(View.GONE);
+    }
 }
