@@ -77,7 +77,9 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
     public void onAttach(Context context) {
         super.onAttach(context);
         rearrange=(Button)getActivity().findViewById(R.id.rearrange_tabs);
-        rearrange.setVisibility(View.INVISIBLE);
+        if(rearrange!=null) {
+            rearrange.setVisibility(View.INVISIBLE);
+        }
     }
 
     public void nightModeOpen() {
@@ -160,6 +162,7 @@ public class SettingsFragment extends PreferenceFragment implements Preference.O
     public void onDetach() {
         super.onDetach();
         toolbar.setVisibility(View.GONE);
+        if(rearrange!=null)
         rearrange.setVisibility(View.GONE);
     }
 }

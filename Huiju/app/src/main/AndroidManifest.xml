@@ -29,6 +29,8 @@
         <activity android:name=".ui.home.CollectDetailsActivity"/>
         <service android:name=".ui.home.NightMode"/>
         <activity android:name=".utils.rearrange_tabs.DraggableGridViewSampleActivity"/>
+        <activity android:name=".ui.search.SearchResult"/>
+        <activity android:name=".ui.search.ResultArticle"/>
     </application>
 
 </manifest>

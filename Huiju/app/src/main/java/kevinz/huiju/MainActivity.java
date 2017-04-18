@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.FrameLayout;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
@@ -25,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private Fragment fragment;
     private int lang;
     private boolean needQuit = false;
-    private FrameLayout fl;
 
     private Settings mSettings = new Settings();
     @Override
@@ -42,9 +40,6 @@ public class MainActivity extends AppCompatActivity {
         changeFragment();
         setRearrangeBtn();
     }
-
-    //解决home页面的标题距离问题
-
 
     private void setRearrangeBtn() {
         findViewById(R.id.rearrange_tabs).setOnClickListener(new View.OnClickListener() {

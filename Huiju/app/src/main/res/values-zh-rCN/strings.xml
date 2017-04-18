@@ -26,4 +26,6 @@
         <string name="information">&#160;&#160;汇聚新闻是一款集果壳科技网,网易热点视频,历史上的今天网站的资讯与一体的Android应用,便于用户浏览不同的新闻资讯。有收藏、语言选择、夜间模式、自动刷新等功能。\n
         &#160;所有数据均来自网络,仅供个人开发与技术交流使用。</string>
         <string name="share_to">分享到 ...</string>
+        <string name="search">输入关键字</string>
+        <string name="start_search">搜索</string>
 </resources>

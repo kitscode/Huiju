@@ -30,4 +30,6 @@
         <item>English</item>
         <item>中文</item>
     </string-array>
+    <string name="search">input the keyword</string>
+    <string name="start_search">search</string>
 </resources>
