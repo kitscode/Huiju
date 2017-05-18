@@ -28,4 +28,6 @@
         <string name="share_to">分享到 ...</string>
         <string name="search">输入关键字</string>
         <string name="start_search">搜索</string>
+        <string name="refresh_success">已是最新数据</string>
+        <string name="refresh_fail">数据获取失败,请刷新重试</string>
 </resources>

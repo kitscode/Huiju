@@ -32,4 +32,6 @@
     </string-array>
     <string name="search">input the keyword</string>
     <string name="start_search">search</string>
+    <string name="refresh_success">refresh success!!</string>
+    <string name="refresh_fail">refresh fail,please try again</string>
 </resources>

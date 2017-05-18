@@ -17,6 +17,7 @@
         android:layout_height="0dp"
         android:layout_weight="4"
      >
+
     </kevinz.huiju.utils.rearrange_tabs.DraggableGridView>
 
     
@@ -27,6 +28,6 @@
         android:layout_weight="4"
       >
     </kevinz.huiju.utils.rearrange_tabs.DraggableGridView>
-     
+
 
 </LinearLayout>

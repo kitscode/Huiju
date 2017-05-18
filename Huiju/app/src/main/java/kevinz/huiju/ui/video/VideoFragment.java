@@ -3,6 +3,7 @@ package kevinz.huiju.ui.video;
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -60,12 +61,16 @@ public class VideoFragment extends BaseDataFragment{
                 for( Videobean.Details data : detailses){
                     res.add(data);
                 }
-                handler.sendEmptyMessage(CONSTANT.LOAD_DATA_SUCCESS);
+                Log.d("????!!!",res.toString());
+                if(res.size()==0)
+                    handler.sendEmptyMessage(CONSTANT.LOAD_DATA_FAILURE);
+                else
+                    handler.sendEmptyMessage(CONSTANT.LOAD_DATA_SUCCESS);
             }
 
             @Override
             public void onFailure(Call<Videobean> call, Throwable t) {
-
+                handler.sendEmptyMessage(CONSTANT.LOAD_DATA_FAILURE);
             }
         });
     }

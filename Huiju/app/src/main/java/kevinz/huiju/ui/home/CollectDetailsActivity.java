@@ -8,11 +8,12 @@ import android.widget.ScrollView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 
+import kevinz.huiju.HuijuApplication;
 import kevinz.huiju.R;
 import kevinz.huiju.bean.collection.Collection;
 import kevinz.huiju.db.DBHelper;
-import kevinz.huiju.utils.DisplayUtil;
 import kevinz.huiju.ui.base.BaseDetailsActivity;
+import kevinz.huiju.utils.DisplayUtil;
 
 /**
  * Created by Administrator on 2016/11/18.
@@ -65,8 +66,8 @@ public class CollectDetailsActivity extends BaseDetailsActivity {
     @Override
     protected void removeFromCollection() {
         super.removeFromCollection();
-        DBHelper helper = new DBHelper(this,"huiju",null,1);
+        DBHelper helper = new DBHelper(HuijuApplication.AppContext,"huiju",null,1);
         SQLiteDatabase db = helper.getWritableDatabase();
-        db.execSQL("delete from collections where title = '"+ collections.getTitle()+"'");
+        db.execSQL("delete from collection where title = '"+ collections.getTitle()+"'");
     }
 }

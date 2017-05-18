@@ -19,13 +19,14 @@ import com.squareup.okhttp.Response;
 
 import java.io.IOException;
 
+import kevinz.huiju.HuijuApplication;
 import kevinz.huiju.R;
 import kevinz.huiju.bean.history.ArticleBean;
 import kevinz.huiju.bean.history.ArticleDetails;
 import kevinz.huiju.db.DBHelper;
+import kevinz.huiju.ui.base.BaseDetailsActivity;
 import kevinz.huiju.utils.CONSTANT;
 import kevinz.huiju.utils.DisplayUtil;
-import kevinz.huiju.ui.base.BaseDetailsActivity;
 
 
 public class HistoryDetailsActivity extends BaseDetailsActivity {
@@ -104,12 +105,12 @@ public class HistoryDetailsActivity extends BaseDetailsActivity {
 
     @Override
     protected String getShareInfo() {
-        return null;
+        return "["+articleDetailses[0].getTitle()+"]:"+articleDetailses[0].getContent()+"(分享自汇聚)";
     }
 
     @Override
     protected void addToCollection() {
-        DBHelper helper = new DBHelper(this,"huiju",null,1);
+        DBHelper helper = new DBHelper(HuijuApplication.AppContext,"huiju",null,1);
         SQLiteDatabase db = helper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("title",articleDetailses[0].getTitle());

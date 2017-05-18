@@ -65,25 +65,13 @@ public abstract class BaseDataFragment extends Fragment {
 
     }
 
-    //When you open the app,it will load data from cache automatically.
-//    private void openFromCache(){
-//        if(needCache()){
-//            new Thread(new Runnable() {
-//                @Override
-//                public void run() {
-//                    loadFromCache();
-//                }
-//            }).start();
-//        }
-//    }
-
     protected Handler handler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(Message msg) {
             switch (msg.what) {
                 case CONSTANT.LOAD_DATA_SUCCESS:
                     if(notify_load_success){
-                        Toast.makeText(getContext(),"已是最新数据",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(),R.string.refresh_success,Toast.LENGTH_SHORT).show();
                     }
                     adapter.notifyDataSetChanged();
                     refreshView.setRefreshing(false);
@@ -93,11 +81,13 @@ public abstract class BaseDataFragment extends Fragment {
                     }
                     break;
                 case CONSTANT.LOAD_DATA_FAILURE:
-                    Toast.makeText(HuijuApplication.AppContext,"数据获取失败,请刷新重试",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HuijuApplication.AppContext,R.string.refresh_fail,Toast.LENGTH_SHORT).show();
                     refreshView.setRefreshing(false);
                     break;
             }
             return false;
         }
     });
+
+
 }

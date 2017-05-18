@@ -45,9 +45,19 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.rearrange_tabs).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,DraggableGridViewSampleActivity.class));
+                startActivityForResult(new Intent(MainActivity.this,DraggableGridViewSampleActivity.class),1);
             }
         });
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (resultCode) { //resultCode为回传的标记，我在B中回传的是RESULT_OK
+            case 1:
+              recreate();
+                break;
+            default:
+                break;
+        }
     }
 
     private void changeFragment() {
@@ -128,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
-        recreate();
     }
 }
 

@@ -14,6 +14,7 @@ import android.widget.Button;
 import java.util.ArrayList;
 import java.util.List;
 
+import kevinz.huiju.HuijuApplication;
 import kevinz.huiju.R;
 import kevinz.huiju.adapter.GuokeAdapter;
 import kevinz.huiju.bean.guoke.ArticleBean;
@@ -106,7 +107,7 @@ public class GuokeFragment extends BaseDataFragment{
 
     @Override
     protected void cache() {
-        SQLiteDatabase db = new DBHelper(getContext(),"huiju",null,1).getWritableDatabase();
+        SQLiteDatabase db = new DBHelper(HuijuApplication.AppContext,"huiju",null,1).getWritableDatabase();
         ContentValues values=new ContentValues();
         for(ArticleBean article:articleBean){
             values.put("title",article.getTitle());
@@ -115,6 +116,7 @@ public class GuokeFragment extends BaseDataFragment{
             values.put("tag",getArguments().getString("channel"));
             db.insert("guoke",null,values);
         }
+        db.close();
     }
 
     @Override
@@ -133,6 +135,7 @@ public class GuokeFragment extends BaseDataFragment{
     @Override
     public void onDetach() {
         super.onDetach();
+        if(search!=null)
         search.setVisibility(View.GONE);
     }
 }

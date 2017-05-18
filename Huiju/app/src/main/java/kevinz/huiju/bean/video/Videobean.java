@@ -43,5 +43,10 @@ public class Videobean {
         public void setMp4_url(String mp4_url) {
             this.mp4_url = mp4_url;
         }
+
+        @Override
+        public String toString() {
+            return "Details{" + "cover='" + cover + '\'' + ", title='" + title + '\'' + ", mp4_url='" + mp4_url + '\'' + '}';
+        }
     }
 }

@@ -9,11 +9,12 @@ import android.widget.ScrollView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 
+import kevinz.huiju.HuijuApplication;
 import kevinz.huiju.R;
 import kevinz.huiju.bean.guoke.ArticleBean;
 import kevinz.huiju.db.DBHelper;
-import kevinz.huiju.utils.DisplayUtil;
 import kevinz.huiju.ui.base.BaseDetailsActivity;
+import kevinz.huiju.utils.DisplayUtil;
 
 
 public class GuokeDetailsActivity extends BaseDetailsActivity {
@@ -51,7 +52,7 @@ public class GuokeDetailsActivity extends BaseDetailsActivity {
 
     @Override
     protected void addToCollection() {
-        DBHelper helper = new DBHelper(this,"huiju",null,1);
+        DBHelper helper = new DBHelper(HuijuApplication.AppContext,"huiju",null,1);
         SQLiteDatabase db = helper.getWritableDatabase();
 
         ContentValues values = new ContentValues();

@@ -54,6 +54,8 @@ public class DraggableGridViewSampleActivity extends Activity {
 
 		gridView = (DraggableGridView) findViewById(R.id.gridview1);
 
+
+
 		for (String tab:tabs) {
 			ImageView view = new ImageView(DraggableGridViewSampleActivity.this);
 			view.setImageBitmap(getThumb(Tabs.tabMap.get(tab)));
@@ -69,6 +71,7 @@ public class DraggableGridViewSampleActivity extends Activity {
 //		}
 
 		setListeners();
+		setResult(1);
 	}
 
 	private void setListeners() {

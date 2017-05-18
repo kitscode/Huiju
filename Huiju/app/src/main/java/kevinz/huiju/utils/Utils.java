@@ -7,8 +7,6 @@ import java.util.Locale;
 
 
 public class Utils {
-    private static boolean DEBUG = true;
-
     public static int getCurrentLanguage(){
         int lang = new Settings().getInt(Settings.LANGUAGE,-1);
         if (lang == -1) {
@@ -43,6 +41,4 @@ public class Utils {
         conf.locale = locale;
         context.getApplicationContext().getResources().updateConfiguration(conf, context.getResources().getDisplayMetrics());
     }
-
-
 }
